@@ -50,29 +50,184 @@
 @import url("http://fonts.googleapis.com/css?family=Roboto:500,700,400&subset=cyrillic-ext,latin")
 
 body
-	font-family: 'Roboto', sans-serif
-	font-size: 12px 
+	position: relative
+	min-width: 1025px
+	min-height: 760px
+	font-size: 13px
 	font-weight: 400
-	line-height: 1.4
+	line-height: 16px
+	font-family: 'Roboto', sans-serif
+	+box
+	a
+		color: black
+		text-decoration: none
+		+transition(all .1s linear)
 
+
+// ico
+.ico
+	display: inline-block
+	&.ico_flag-ru
+		+s(flag-ru)
+	&.ico_operator
+		+s(operator)
 
 // common blocks      
 
+// header
+.header
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	height: 50px
+	z-index: 1
+	background-color: white
+	.header__center
+		position: absolute
+		top: 0
+		left: 50%
+		height: 50px
+		+translate(-50%, 0)
+		opacity: 0.25
+		color: black
+		font-size: 28px
+		line-height: 50px
+		text-transform: uppercase
+	.header__right
+		float: right
+	.date,
+	.language,
+	.operator
+		vertical-align: top
+		display: inline-block
 
+// menu
+.menu
+	float: left
+	font-size: 0
+	.menu__item
+		margin-left: 20px
+		height: 50px
+		line-height: 50px
+		vertical-align: top
+		display: inline-block
+	a
+		+opacity(0.25)
+		color: black
+		font-size: 28px
+		font-weight: 400
+		line-height: 1
+		vertical-align: middle
+		text-transform: uppercase
+		display: inline-block
+		&:hover,
+		&.is-active
+			+opacity(1)
+	
+// date
+.date
+	padding-right: 30px
 
+// language
+.language
+	position: relative
+	width: 125px
+	text-align: center
+	cursor: pointer
+	background: #f2f2f2
+	.language__text
+		vertical-align: middle
+		display: inline-block
+	.language__arr,
+	.ico
+		display: inline-block
+		vertical-align: middle
+		line-height: 1
+	.language__arr
+		margin-right: 7px
+		+s(arr-bot)
+	.ico
+		margin-left: 6px
 
+// operator
+.operator
+	width: 125px
+	text-align: center
+	.ico
+		margin-right: 5px
+		vertical-align: middle
 
+// date language operator 
+.date,
+.language,
+.operator
+	height: 50px
+	font-size: 15px
+	line-height: 50px
+	text-transform: uppercase
 
+// wrap
+.wrap
+	position: absolute
+	top: 50px
+	left: 0
+	right: 0
+	bottom: 31px
+	background-color: #252529
+	+background-image(linear-gradient(to top, rgba(0, 0, 0, 0.06) 0%, rgba(255, 255, 255, 0.06) 100%))
 
-
-
-
-
-
-
-
-
-
+// ticker
+.ticker
+	overflow: hidden
+	white-space: nowrap
+	height: 31px
+	line-height: 31px
+	.rate
+		margin-left: 42px
+		vertical-align: middle
+		&:first-child
+			margin-left: 20px
+// rate
+.rate
+	display: inline-block
+	vertical-align: top
+	font-size: 15px
+	font-weight: 700
+	line-height: 1
+	text-transform: uppercase
+	&.is-rate-plus
+		.rate__ico
+			+s(arr-plus-green)
+		.rate__percent
+			color: #009c1d
+	&.is-rate-minus
+		.rate__ico
+			+s(arr-minus-red)
+		.rate__percent
+			color: #fc4441
+	&.is-rate-plus,
+	&.is-rate-minus
+		.rate__percent
+			display: inline-block
+	.rate__text,
+	.rate__ico,
+	.rate__percent,
+	.rate__ico
+		vertical-align: middle
+		display: inline-block
+	.rate__percent
+		margin-left: 12px
+		display: none
+// footer
+.footer
+	position: fixed
+	left: 0
+	right: 0
+	bottom: 0
+	height: 31px
+	z-index: 1
+	background-color: white
 
 
 

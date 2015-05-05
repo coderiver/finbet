@@ -11,11 +11,267 @@
 	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
 </head>
 <body>
-<!-- BEGIN  out-->
-<div class="out">
-
+<!--  header -->
+<header class="header">
+	<!-- menu -->
+	<nav class="menu">
+		<li class="menu__item"><a class="is-active" href="#">finbet</a></li>
+		<li class="menu__item"><a href="#">live</a></li>
+		<li class="menu__item"><a href="#">sport</a></li>
+		<li class="menu__item"><a href="#">casino</a></li>
+	</nav>
+	<div class="header__center">#59</div>
+	<div class="header__right">
+		<!-- date -->
+		<date class="date">Mo, 25.April 18:00:15 CET</date>
+		<!-- language -->
+		<div class="language">
+			<span class="ico ico_flag-ru"></span>
+			<div class="language__text">rus</div>
+			<span class="language__arr"></span>
+		</div>
+		<!-- operator -->
+		<div class="operator">
+			<i class="ico ico_operator"></i>
+			operator
+		</div>
+	</div>
+</header>
+<!-- wrap-->
+<div class="wrap">
+	<div class="col-left">
+		<!-- nav -->
+		<nav class="nav">
+			<li class="nav__item">
+				<a href="#">Indices</a>
+			</li>
+			<li class="nav__item">
+				<a href="#">Stocks</a>
+			</li>
+			<li class="nav__item is-active">
+				<a href="#">Currencies</a>
+				<ul class="nav__list">
+					<li><a href="#" class="currency currency_eur-usd">EUR/USD</a></li>
+					<li><a href="#" class="currency currency_rur-eur">RUR/EUR</a></li>
+					<li><a href="#" class="currency currency_rur-usd">RUR/USD</a></li>
+					<li><a href="#" class="currency currency_eur-aud">EUR/aud</a></li>
+					<li><a href="#" class="currency currency_aud-jpy">aud/jpy</a></li>
+					<li><a href="#" class="currency currency_eur-usd">EUR/USD</a></li>
+					<li><a href="#" class="currency currency_rur-eur">RUR/EUR</a></li>
+					<li><a href="#" class="currency currency_rur-usd">RUR/USD</a></li>
+					<li><a href="#" class="currency currency_eur-aud">EUR/aud</a></li>
+					<li><a href="#" class="currency currency_aud-jpy">aud/jpy</a></li>
+					<li><a href="#" class="currency currency_eur-usd">EUR/USD</a></li>
+					<li><a href="#" class="currency currency_rur-eur">RUR/EUR</a></li>
+					<li><a href="#" class="currency currency_rur-usd">RUR/USD</a></li>
+					<li><a href="#" class="currency currency_eur-aud">EUR/aud</a></li>
+					<li><a href="#" class="currency currency_aud-jpy">aud/jpy</a></li>
+					<li><a href="#" class="currency currency_eur-usd">EUR/USD</a></li>
+				</ul>
+			</li>
+		</nav>
+		<!-- commodities -->
+		<div class="commodities">
+			<div class="commodities__buttons">
+				<button class="commodities__plus" type="button"></button>
+				<button class="commodities__minus" type="button"></button>
+			</div>
+			<div class="commodities__text">Commodities</div>
+		</div>
+	</div>
+	<!-- graph -->
+	<div class="graph">
+		
+	</div>
+	<!-- col-right -->
+	<div class="col-right">
+		<!-- topic -->
+		<div class="topic">
+			<!-- counts -->
+			<div class="counts">
+				<div class="counts__text"></div>
+				<div class="counts__price"></div>
+			</div>
+			<!-- authorization -->
+			<div class="authorization">
+				<button class="login is-active" type="button"></button>
+				<button class="logaut" type="button"></button>
+			</div>
+		</div>
+		<!-- bet -->
+		<div class="bet">
+			<div class="bet__row">
+				<div class="bet__text">Ставка</div>
+				<div class="bet__inf">Макс. выигрыш </div>
+			</div>
+			<div class="bet__calculator">
+				<button class="bet__minus"></button>
+				<div class="bet__price">$ 40</div>
+				<button class="bet__plus"></button>
+				<div class="max-win">$ 74</div>
+			</div>
+			<div class="bet__row">
+				<div class="bet__inf">85% от ставки</div>
+			</div>
+		</div>
+		<!-- duration -->
+		<div class="duration">
+			<div class="duration__text"></div>
+			<div class="duration__table">
+				<div class="duration__item">15 с</div>
+				<div class="duration__item">30 с</div>
+				<div class="duration__item">60 с</div>
+				<div class="duration__item">90 с</div>
+			</div>
+		</div>
+		<!-- buttons -->
+		<div class="buttons">
+			<button class="btn-top"><i class="ico ico_arrtop"></i>выше</button>
+			<button class="btn-bottom"><i class="ico ico_arrbot"></i>ниже</button>
+		</div>
+		<!-- options -->
+		<div class="options">
+			<div class="options__topic">
+				<div class="options__left">Открытые опционы</div>
+				<div class="options__right">Выигрыш</div>
+			</div>
+			<!-- option -->
+			<div class="option is-selected">
+				<div class="timer timer_yellow">
+					<div class="timer__ico"></div>
+					<div class="timer__time">00:03</div>
+				</div>
+				<div class="option__currency is-up">
+					<span class="option__ico"></span>
+					<span>EUR/USD € 25</span>
+				</div>
+				<div class="option__win">€ 40</div>
+			</div>
+			<!-- option -->
+			<div class="option">
+				<div class="timer timer_yellow">
+					<div class="timer__ico"></div>
+					<div class="timer__time">00:10</div>
+				</div>
+				<div class="option__currency is-up">
+					<span class="option__ico"></span>
+					<span>EUR/USD € 25</span>
+				</div>
+				<div class="option__win">€ 40</div>
+			</div>
+			<!-- option -->
+			<div class="option">
+				<div class="timer">
+					<div class="timer__ico"></div>
+					<div class="timer__time">00:11</div>
+				</div>
+				<div class="option__currency is-down">
+					<span class="option__ico"></span>
+					<span>EUR/USD € 25</span>
+				</div>
+				<div class="option__win">€ 40</div>
+			</div>
+			<!-- option -->
+			<div class="option">
+				<div class="timer">
+					<div class="timer__ico"></div>
+					<div class="timer__time">00:20</div>
+				</div>
+				<div class="option__currency is-down">
+					<span class="option__ico"></span>
+					<span>RUR/EUR € 40</span>
+				</div>
+				<div class="option__win">€ 68</div>
+			</div>
+			<!-- option -->
+			<div class="option">
+				<div class="timer">
+					<div class="timer__ico"></div>
+					<div class="timer__time">00:34</div>
+				</div>
+				<div class="option__currency is-down">
+					<span class="option__ico"></span>
+					<span>RUR/USD € 40</span>
+				</div>
+				<div class="option__win">€ 68</div>
+			</div>
+			<div class="options__row">
+				<div class="options__price">€ 256</div>
+			</div>
+		</div>
+	</div>
 </div>
-<!-- END out-->
+<!-- footer -->
+<footer class="footer">
+	<!-- ticker -->
+	<div class="ticker">
+		<!-- rate -->
+		<div class="rate is-rate-plus">
+			<div class="rate__text">EUR/USD  1,0675</div>
+			<div class="rate__percent">
+				<span class="rate__ico"></span>
+				+1,5%
+			</div>
+		</div>
+		<div class="rate is-rate-minus">
+			<div class="rate__text">RUR/EUR  1,0675</div>
+			<div class="rate__percent">
+				<span class="rate__ico"></span>
+				–0,8%
+			</div>
+		</div>
+		<div class="rate is-rate-minus">
+			<div class="rate__text">RUR/USD   1,0675</div>
+			<div class="rate__percent">
+				<span class="rate__ico"></span>
+				–2,1%
+			</div>
+		</div>
+		<div class="rate is-rate-plus">
+			<div class="rate__text">gold  1,0675</div>
+			<div class="rate__percent">
+				<span class="rate__ico"></span>
+				+2,4%
+			</div>
+		</div>
+		<div class="rate is-rate-plus">
+			<div class="rate__text">oil  1,0675</div>
+			<div class="rate__percent">
+				<span class="rate__ico"></span>
+				+1,5%
+			</div>
+		</div>
+		<div class="rate is-rate-minus">
+			<div class="rate__text">RUR/EUR  1,0675</div>
+			<div class="rate__percent">
+				<span class="rate__ico"></span>
+				–0,8%
+			</div>
+		</div>
+		<div class="rate is-rate-minus">
+			<div class="rate__text">EUR/USD  1,0675</div>
+			<div class="rate__percent">
+				<span class="rate__ico"></span>
+				+1,5%
+			</div>
+		</div>
+		<div class="rate">
+			<div class="rate__text">RUR/USD  1,0675</div>
+			<div class="rate__percent">
+				<span class="rate__ico"></span>
+				+1,5%
+			</div>
+		</div>
+		<div class="rate is-rate-plus">
+			<div class="rate__text">EUR/USD  1,0675</div>
+			<div class="rate__percent">
+				<span class="rate__ico"></span>
+				+1,5%
+			</div>
+		</div>
+	</div>        
+	<a href="#" class="footer__logo"></a>
+</footer>
 <!-- load scripts -->
 <script src="js/lib/head.js" data-headjs-load="js/init.js"></script>
 </body>
