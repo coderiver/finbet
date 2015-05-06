@@ -10,7 +10,7 @@
 	<link rel="stylesheet" media="all" href="css/screen.css" >
 	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
 </head>
-<body>
+<body class="is-open-popup">
 <!-- out -->
 <div class="out">
 	<!--  header -->
@@ -290,6 +290,31 @@
 			<a href="#" class="footer__logo"></a>
 		</div>
 	</footer>
+</div>
+<!-- popup -->
+<div class="popup">
+	<div class="popup__in">
+		<h3 class="popup__title">authorization</h3>
+		<!-- form -->
+		<div class="form">
+			<div class="form__row">
+				<div class="form__label">Логин</div>
+				<div class="form__field">
+					<input type="text" placeholder="Alexander">
+				</div>
+			</div>
+			<div class="form__row">
+				<div class="form__label">Пароль</div>
+				<div class="form__field">
+					<input type="password">
+				</div>
+			</div>
+			<div class="form__bottom">
+				<button class="btn" type="submit">Войти</button>
+				<a href="#" class="authoriz-blue">Authorization <br>via personal card</a>
+			</div>
+		</div>
+	</div>
 </div>
 <!-- load scripts -->
 <script src="js/lib/head.js" data-headjs-load="js/init.js"></script>

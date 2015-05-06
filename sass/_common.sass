@@ -51,18 +51,39 @@
 
 body
 	position: relative
-	min-width: 1025px
+	min-width: 1000px
 	min-height: 760px
 	font-size: 13px
 	font-weight: 400
 	line-height: 16px
+	overflow: auto
 	font-family: 'Roboto', sans-serif
 	+box
+	&:before
+		position: fixed
+		content: ''
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: #252529
+		+background-image(linear-gradient(to top, rgba(0, 0, 0, 0.06) 0%, rgba(255, 255, 255, 0.06) 100%))
 	a
 		color: black
 		text-decoration: none
 		+transition(all .1s linear)
+	&.is-open-popup
+		overflow: hidden
+		.popup
+			display: block
 
+.out
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 1
 
 // ico
 .ico
@@ -71,6 +92,14 @@ body
 		+s(flag-ru)
 	&.ico_operator
 		+s(operator)
+	&.ico_arrtop
+		+s(arrtop)
+	&.ico_arrbot
+		+s(arrbot)
+	&.ico_error
+		+s(error-ico)
+	&.ico_lose
+		+s(ico-lose)
 
 // common blocks      
 
@@ -81,7 +110,7 @@ body
 	left: 0
 	right: 0
 	height: 50px
-	z-index: 1
+	z-index: 3
 	background-color: white
 	.header__center
 		position: absolute
@@ -96,6 +125,7 @@ body
 		text-transform: uppercase
 	.header__right
 		float: right
+		font-size: 0
 	.date,
 	.language,
 	.operator
@@ -107,7 +137,7 @@ body
 	float: left
 	font-size: 0
 	.menu__item
-		margin-left: 20px
+		margin-left: 17px
 		height: 50px
 		line-height: 50px
 		vertical-align: top
@@ -174,8 +204,406 @@ body
 	left: 0
 	right: 0
 	bottom: 31px
-	background-color: #252529
-	+background-image(linear-gradient(to top, rgba(0, 0, 0, 0.06) 0%, rgba(255, 255, 255, 0.06) 100%))
+	+box
+	+clr
+
+// col
+.col-left
+	position: relative
+	float: left
+	padding: 30px 0 38px
+	width: 140px
+	z-index: 2
+	+r(1036)
+		padding-top: 11px
+.col-right
+	position: relative
+	float: right
+	color: white
+	right: 0
+	width: 250px
+	z-index: 2
+
+// nav
+.nav
+	.nav__item
+		display: block
+		&.is-active,
+		&:hover
+			a
+				color: #ffdd25
+			.nav__list
+				display: block
+			.link
+				color: white
+	a
+		padding: 0 22px
+		font-size: 13px
+		font-weight: 500
+		height: 40px
+		color: white
+		line-height: 40px
+		display: block
+		+box
+	.nav__list
+		display: none
+
+// link
+.link
+	position: relative
+	text-align: center
+	font-size: 15px
+	text-transform: uppercase
+	span
+		position: relative
+		padding: 1px 2px
+		z-index: 1
+	&:before
+		position: absolute
+		content: ''
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		width: 140px
+		+opacity(.1)
+	&.is-active,
+	&:hover
+		span
+			background: #000
+			background: rgba(#000, .8)
+		&:before
+			width: 148px
+			-webkit-clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%)
+			clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%)
+			+opacity(1)
+	&.link_eur-usd
+		&:before
+			background: url(../img/eur-usd.png) no-repeat 0 0
+			background-size: cover
+	&.link_rur-eur
+		&:before
+			background: url(../img/rur-eur.png) no-repeat 0 0
+			background-size: cover
+	&.link_rur-usd
+		&:before
+			background: url(../img/rur-usd.png) no-repeat 0 0
+			background-size: cover
+	&.link_eur-aud
+		&:before
+			background: url(../img/eur-aud.png) no-repeat 0 0
+			background-size: cover
+	&.link_aud-jpy
+		&:before
+			background: url(../img/aud-jpy.png) no-repeat 0 0
+			background-size: cover
+
+// commodities
+.commodities
+	text-align: center
+	margin-top: 44px
+	+r(1036)
+		margin-top: 16px
+	.commodities__buttons
+		width: 112px
+		height: 55px
+		border: 1px solid white
+		font-size: 0
+		display: inline-block
+		+box
+	.commodities__plus,
+	.commodities__minus
+		position: relative
+		width: 55px
+		height: 53px
+		display: inline-block
+		background: none
+		+box
+		&:before
+			position: absolute
+			content: ''
+			top: 50%
+			left: 50%
+			+translate(-50%,-50%)
+	.commodities__plus
+		border-right: 1px solid white
+		&:before
+			+s(arr-top)
+	.commodities__minus
+		&:before
+			+s(arr-bott)
+	.commodities__text
+		margin: 20px 0 0
+		color: white
+		font-size: 13px
+		font-weight: 500
+
+// topic
+.topic
+	padding: 15px 14px 0
+	height: 50px
+	background: #39393d
+	+box
+	+clr
+
+// calculator
+.calculator
+	padding: 0 13px
+	margin-top: 95px
+	+r(1036)
+		margin-top: 28px
+
+// bet
+.bet
+	font-size: 0
+	.bet__row
+		margin-top: 5px
+		+clr
+		&:first-child
+			margin-top: 0
+	.bet__text
+		float: left
+		font-size: 13px
+		font-weight: 500
+	.bet__inf
+		float: right
+		font-size: 13px
+		color: #ffe41d
+	.bet__minus,
+	.bet__plus,
+	.bet__price,
+	.max-win
+		width: 56px
+		height: 55px
+		position: relative
+		vertical-align: top
+		display: inline-block
+		+box
+	.bet__minus,
+	.bet__plus
+		border-top: 1px solid #fff
+		border-bottom: 1px solid #fff
+		background: none
+		&:before
+			position: absolute
+			content: ''
+			top: 50%
+			left: 50%
+			+translate(-50%,-50%)
+	.bet__minus
+		border-left: 1px solid #fff
+		&:before
+			+s(ico-minus)
+	.bet__plus
+		&:before
+			+s(ico-plus)
+	.bet__price
+		color: #000
+		font-size: 22px
+		line-height: 55px
+		text-align: center
+		text-transform: uppercase
+		background: #fff
+	.max-win
+		color: #000
+		text-align: center
+		text-transform: uppercase
+		font-size: 22px
+		line-height: 55px
+		background-color: #ffd236
+		+background-image(linear-gradient(to left, rgba(0, 0, 0, 0.12) 0%, rgba(255, 255, 255, 0.12) 100%))
+
+// duration
+.duration
+	margin-top: 4px
+	.duration__text
+		font-size: 13px
+	.duration__table
+		margin-top: 5px
+		border: 1px solid #fff
+		font-size: 0
+	.duration__item
+		height: 55px
+		width: 55px
+		border-left: 1px solid #fff
+		font-size: 22px
+		line-height: 55px
+		text-align: center
+		vertical-align: top
+		display: inline-block
+		+box
+		&:first-child
+			border-left: 0
+		&.duration__item_white
+			color: #000
+			background: #fff
+
+// buttons
+.buttons
+	margin-top: 43px
+	+clr
+	.btn-top,
+	.btn-bottom
+		width: 100%
+		height: 80px
+		color: #fff
+		font-family: 'Roboto', sans-serif
+		font-size: 22px
+		font-weight: 400
+		line-height: 80px
+		text-align: center
+		text-transform: uppercase
+		display: block
+		&:hover
+			+opacity(.9)
+		+r(1036)
+			float: left
+			width: 50%
+	.btn-top
+		background: url(../img/bg-btn-top.png) no-repeat 0 0
+		background-size: cover
+	.btn-bottom
+		background: url(../img/bg-btn-bot.png) no-repeat 0 0
+		background-size: cover
+	.ico
+		position: relative
+		margin-right: 5px
+		top: -2px
+		vertical-align: middle
+
+// counts
+.counts
+	float: left
+	.counts__text
+		font-size: 13px
+		font-weight: 500
+		line-height: 24px
+	.counts__price
+		margin-left: 18px
+		font-size: 22px
+		font-weight: 400
+		line-height: 1
+		text-transform: uppercase
+	.counts__text,
+	.counts__price
+		vertical-align: top
+		display: inline-block
+
+// authorization
+.authorization
+	float: right
+// login logaut
+.login
+	+s(login)
+.login,
+.logaut
+	display: none
+	&.is-active
+		display: inline-block
+
+// options
+.options
+	margin-top: 110px
+	cursor: pointer
+	+r(1036)
+		margin-top: 47px
+	.options__topic
+		margin-bottom: 9px
+		padding: 0 13px
+		font-size: 13px
+		+clr
+	.options__left
+		float: left
+	.options__right
+		float: right
+	.options__price
+		margin-top: 12px
+		padding-right: 17px
+		text-align: right
+	.option
+		&:nth-child(even)
+			background: #2b2b2f
+			background: rgba(#fff, .05)
+
+// option
+.option
+	position: relative
+	padding-top: 7px
+	height: 35px
+	font-size: 0
+	display: block
+	+box
+	&:hover
+		background: #2b2b2f
+		background: rgba(#fff, .05)
+	&:hover,
+	&.is-selected
+		&:before
+			display: block
+	&:before
+		position: absolute
+		content: ''
+		top: 0
+		left: -3px
+		bottom: 0
+		width: 3px
+		background-color: #ffb400
+		display: none
+	.option__currency
+		width: 118px
+		line-height: 22px
+		&.is-up
+			.option__ico
+				+s(geen-arr-option)
+		&.is-down
+			.option__ico
+				+s(red-arr-option)
+	.option__ico
+		position: relative
+		margin-right: 5px
+		top: -1px
+		vertical-align: middle
+		display: inline-block
+	.option__money
+		margin-left: 5px
+		display: inline-block
+	.timer,
+	.option__currency,
+	.option__win
+		font-size: 13px
+		display: inline-block
+		vertical-align: top
+		color: #fff
+		text-transform: uppercase
+	.option__win
+		border: 1px solid #fff
+		height: 22px
+		width: 35px
+		text-align: center
+		line-height: 20px
+		+box
+
+// timer
+.timer
+	padding-left: 13px
+	width: 83px
+	line-height: 22px
+	+box
+	&.timer_yellow
+		.timer__ico
+			+s(timer-yellow-ico)
+		.timer__time
+			color: #ffb400
+	.timer__ico
+		position: relative
+		margin-right: 5px
+		top: -1px
+		vertical-align: middle
+		display: inline-block
+		+s(timer-ico)
+	.timer__time
+		color: #fff
+		display: inline-block
 
 // ticker
 .ticker
@@ -188,6 +616,7 @@ body
 		vertical-align: middle
 		&:first-child
 			margin-left: 20px
+
 // rate
 .rate
 	display: inline-block
@@ -214,21 +643,339 @@ body
 	.rate__ico,
 	.rate__percent,
 	.rate__ico
+		position: relative
+		top: -1px
 		vertical-align: middle
 		display: inline-block
 	.rate__percent
 		margin-left: 12px
 		display: none
+
+// graph
+.graph
+	position: absolute
+	top: 0
+	left: 140px
+	right: 250px
+	bottom: 0
+	background: url(../img/bg-graf.png) no-repeat 50% 50%
+	background-size: cover
+
+// behavior
+.behavior
+	position: absolute
+	left: 30px
+	bottom: 96px
+	z-index: 2
+	+r(1036)
+		bottom: 30px
+	.behavior__text
+		width: 140px
+		color: white
+		line-height: 16px
+		vertical-align: top
+		display: inline-block
+	.behavior__course
+		width: 177px
+		vertical-align: top
+		display: inline-block
+	.range
+		margin-top: 8px
+
+// winner
+.range
+	position: relative
+	padding-left: 17px
+	height: 19px
+	line-height: 19px
+	font-weight: 500
+	color: #fff
+	background-color: #ff5439
+	+background-image(linear-gradient(bottom, #ff6846 0%, #ff3f2b 100%))
+	+border-radius(19px)
+	.range__scroll
+		position: absolute
+		top: 0
+		bottom: 0
+		right: 0
+		padding-left: 10px
+		+border-radius(0 19px 19px 0)
+		background-color: #51dc31
+		+background-image(linear-gradient(right, #a5ed18 0%, #50db30 100%))
+		+box
+	.range__toddler
+		position: absolute
+		left: 0
+		top: -4px
+		bottom: -4px
+		width: 3px
+		background-color: white
+		+border-radius(2px)
+
+// winners
+.winners
+	position: absolute
+	right: 10px
+	bottom: 10px
+	z-index: 2
+	width: 190px
+.winner
+	position: relative
+	padding: 0 10px 0 38px
+	margin-top: 5px
+	height: 30px
+	line-height: 30px
+	font-weight: 500
+	color: #fff
+	background: #1c1c1f
+	+clr
+	.winner__left
+		float: left
+	.winner__img
+		position: absolute
+		top: 0
+		left: 0
+		height: 30px
+		width: 30px
+		overflow: hidden
+		img
+			position: relative
+			top: 50%
+			width: 100%
+			+translate(0,-50%)
+			display: block
+	.winner__name
+		vertical-align: top
+		display: inline-block
+	.winner__status
+		margin-left: 1px
+		color: #FFE41D
+		vertical-align: top
+		display: inline-block
+	.winner__price
+		float: right
+
+// 
+.error
+	margin: 35px 0 45px
+	text-align: center
+	.error__text
+		margin: 10px 0
+		color: #FFCE30
+		font-size: 15px
+		font-weight: 500
+		text-transform: uppercase
+	.error__ico
+		height: 74px
+		.ico
+			position: relative
+			top: 50%
+			+translate(0,-50%)
+	.btn
+		width: 172px
+// btn
+.btn
+	padding: 0 35px
+	min-width: 133px
+	height: 55px
+	font-size: 22px
+	color: #fff
+	line-height: 55px
+	background: url(../img/bg-btn.png) no-repeat 0 0
+	background-size: cover
+	display: inline-block
+	+box
+	&:hover
+		+opacity(.9)
+
+// form
+.form
+	.form__label
+		font-size: 13px
+		font-weight: 500
+	.form__row
+		margin-top: 18px
+	.form__field
+		margin-top: 5px
+	input
+		width: 100%
+		height: 55px
+		text-indent: 10px
+		color: #fff
+		font-size: 28px
+		border: 1px solid #FFF
+		display: block
+		background: none
+		+placeholder-color(#fff)
+		&:focus
+			+placeholder
+				font-size: 0
+
+	.form__bottom
+		margin-top: 33px
+		+clr
+		.authoriz-blue
+			float: right
+			width: 167px
+
+// authoriz-blu
+.authoriz-blue
+	color: #3CAAF5
+	font-size: 22px
+	line-height: 28px
+	text-align: right
+	&:hover
+		text-decoration: underline
+// popup
+.popup
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	background: rgba(#23669A, .9)
+	z-index: 100
+	display: none
+	.popup__in
+		padding: 46px 50px 37px
+		margin: 0 auto
+		width: 528px
+		height: 413px
+		color: #fff
+		background-color: #252529
+		+background-image(linear-gradient(to top, rgba(0, 0, 0, 0.09) 0%, rgba(255, 255, 255, 0.09) 100%))
+		+box
+	.popup__title
+		margin-bottom: 27px
+		color: #FFF
+		font-size: 28px
+		line-height: 1
+		font-weight: 400
+		text-transform: uppercase
+		&.popup__title_mod
+			padding-right: 80px
+			margin: 60px 0 70px
+			line-height: 48px
+			span
+				color: #FFDB42
+
+// lose
+.info
+	position: fixed
+	left: 0
+	bottom: 0
+	right: 0
+	padding: 33px 0 46px
+	font-size: 42px
+	line-height: 1.2
+	font-weight: 500
+	text-transform: uppercase
+	z-index: 100
+	background: rgba(#1D1D21, .95)
+	display: none
+	+box
+	&.is-active
+		display: block
+	&.info_green
+		padding: 20px 0
+		background: url(../img/bg-green-info-op.png) repeat-x 0 0
+		background-size: cover
+		&:before
+			position: absolute
+			content: ''
+			left: 0
+			right: 0
+			bottom: 0
+			height: 212px
+			background: url(../img/dollar-left.png) no-repeat -53px 55px, url(../img/dollar-bot.png) no-repeat 50% 96px, url(../img/dollar-right.png) no-repeat 107% 17px, url(../img/arrow-top.png) no-repeat 17% 0
+		.info__close
+			margin-left: 25px
+			vertical-align: super
+	&.info_red
+		padding: 20px 0
+		height: 115px
+		background: url(../img/bg-red-info.png) repeat-x 0 0
+		background-size: cover
+		&:before
+			position: absolute
+			content: ''
+			left: 0
+			right: 0
+			bottom: 0
+			height: 154px
+			background: url(../img/dollar-left.png) no-repeat -53px 55px, url(../img/dollar-bot.png) no-repeat 50% 96px, url(../img/dollar-right.png) no-repeat 107% 17px, url(../img/arrow-bot.png) no-repeat -48px -25px
+		.info__close
+			margin-left: 25px
+			vertical-align: super
+	.info__in
+		position: relative
+		margin: 0 auto
+		width: 588px
+		z-index: 2
+		+clr
+	.info__red
+		float: left
+		color: #FB673E
+		vertical-align: top
+		display: inline-block
+		.ico
+			margin-right: 28px
+	.info__white
+		float: right
+		margin-left: 30px
+		color: #FFF
+		vertical-align: top
+		display: inline-block
+	.info__price
+		position: relative
+		margin-left: 30px
+		top: -27px
+		height: 102px
+		width: 102px
+		color: #000
+		text-align: center
+		line-height: 102px
+		font-size: 42px
+		font-weight: 500
+		+border-radius(50%)
+		+background-image(linear-gradient(right, #edf6ef 50%, rgba(51, 198, 79, 0) 50%))
+		background-color: #f8fdf9
+		display: inline-block
+	.info__close
+		position: relative
+		top: -3px
+		margin-left: 34px
+		background-color: none
+		display: inline-block
+		vertical-align: middle
+		+s(close-lose)
+		&:hover
+			+opacity(.8)
+
 // footer
 .footer
 	position: fixed
+	padding-right: 250px
 	left: 0
 	right: 0
 	bottom: 0
 	height: 31px
-	z-index: 1
+	z-index: 3
 	background-color: white
-
+	+box
+	.footer__right
+		position: absolute
+		top: 0
+		right: 0
+		width: 250px
+		height: 31px
+		background: #f2f2f2
+	.footer__logo
+		position: absolute
+		left: 50%
+		top: 50%
+		+translate(-50%, -50%)
+		+s(logo-sportsbook)
 
 
 
