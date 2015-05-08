@@ -109,6 +109,11 @@ body.is-open-popup .popup { display: block; }
 .link.link_rur-usd:before { background: url(../img/rur-usd.png) no-repeat 0 0; background-size: cover; }
 .link.link_eur-aud:before { background: url(../img/eur-aud.png) no-repeat 0 0; background-size: cover; }
 .link.link_aud-jpy:before { background: url(../img/aud-jpy.png) no-repeat 0 0; background-size: cover; }
+.link.link_oil:before { background: url(../img/oil.png) no-repeat 0 0; background-size: cover; }
+.link.link_gold:before { background: url(../img/gold.png) no-repeat 0 0; background-size: cover; }
+.link.link_gazprom:before { background: url(../img/gazprom.png) no-repeat 0 0; background-size: cover; }
+.link.link_apple:before { background: url(../img/apple.png) no-repeat 0 0; background-size: cover; }
+.link.link_google:before { background: url(../img/google.png) no-repeat 0 0; background-size: cover; }
 
 .commodities { text-align: center; margin: 44px 8px 30px 0; }
 @media only screen and (max-width: 1036px) { .commodities { margin-top: 16px; } }
