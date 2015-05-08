@@ -197,7 +197,7 @@ body.is-open-popup .popup { display: block; }
 
 .timer { padding-left: 13px; width: 83px; line-height: 22px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .timer.timer_yellow .timer__time { color: #ffb400; }
-.timer .timer__ico { margin: 1px 5px 0 0; vertical-align: middle; display: inline-block; }
+.timer .timer__ico { position: relative; top: 2px; margin: 0 5px 0 0; vertical-align: middle; display: inline-block; }
 .timer .timer__ico.is-opacity { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; }
 .timer .timer__time { font-size: 0; color: white; line-height: 1; display: inline-block; }
 .timer .timer__time span { font-size: 13px; }
