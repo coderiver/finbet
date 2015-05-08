@@ -94,8 +94,8 @@ body.is-open-popup .popup { display: block; }
 .nav { margin-top: 30px; padding-right: 8px; }
 .nav .nav__item { display: block; }
 .nav .nav__item.is-active a, .nav .nav__item:hover a { color: #ffdd25; }
-.nav .nav__item.is-active .nav__list, .nav .nav__item:hover .nav__list { display: block; }
 .nav .nav__item.is-active .link, .nav .nav__item:hover .link { color: white; }
+.nav .nav__item.is-active .nav__list { display: block; }
 .nav a { padding: 0 22px; font-size: 13px; font-weight: 500; height: 40px; color: white; line-height: 40px; display: block; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .nav .nav__list { display: none; }
 
