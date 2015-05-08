@@ -1,16 +1,5 @@
 head.ready(function() {
 
-	// scroll-pane
-	$('.scroll-pane').jScrollPane();
-	$( window ).resize(function() {
-		var settings = {
-				autoReinitialise: true
-			};
-			var pane = $('.scroll-pane')
-			pane.jScrollPane(settings);
-			var contentPane = pane.data('jsp').getContentPane();
-	});
-
 	// duration-item
 	$('.js-duration-item').on('click', function(){
 		$('.js-duration-item').removeClass('is-active');
@@ -71,5 +60,49 @@ head.ready(function() {
 			animation: false
 		});
 	});
+
+	// choose
+	function choose() {
+		var number = $('.js-calculator');
+		number.each(function(){
+			var max_number = +($(this).attr('data-max-number'));
+				input = $(this).find('input');
+				plus = $(this).find('.js-plus');
+				minus = $(this).find('.js-minus');
+				amount = $(this).find('.js-amount');
+				coeff = 1.85;
+			plus.bind('click', function(){
+				vall = input.val();
+				vall++;
+				allAmount = (vall * coeff).toFixed(0);
+				var val = +(input.val());
+				if (val >= max_number) {
+					return false;
+				}
+				else {
+					val += 1;
+					input.val(val);
+					amount.text(allAmount);
+				}
+			});
+			minus.bind('click', function(){
+				vall = input.val();
+				vall--;
+				allAmount = (vall * coeff).toFixed(0);
+				var val = +(input.val());
+				if (val > 1) {
+					val -= 1;
+					input.val(val);
+					amount.text(allAmount);
+				}
+				else {
+					input.val('0');
+					return false;
+				}
+				amount.text(allAmount);
+			});
+		});
+	}
+	choose();
 
 });

@@ -45,7 +45,7 @@
 	</header>
 	<!-- wrap-->
 	<div class="wrap">
-		<div class="col-left scroll-pane">
+		<div class="col-left">
 			<!-- nav -->
 			<nav class="nav">
 				<li class="nav__item">
@@ -105,9 +105,14 @@
 			</nav>
 		</div>
 		<!-- graph -->
-		<div class="graph scroll-pane">
+		<div class="graph">
 			<!-- chart -->
 			<div class="chart">
+				<!-- pointers -->
+				<div class="pointer" style="top:30px">1.23<span class="pointer__red">45674</span></div>
+				<div class="pointer" style="top:70px">2.63<span class="pointer__red">44674</span></div>
+				<div class="pointer" style="top:110px">4.83<span class="pointer__red">44674</span></div>
+				<div class="pointer is-active" style="top:150px">6.13<span class="pointer__red">55674</span></div>
 			</div>
 			<!-- controls -->
 			<button class="zoom-plus" type="button"></button>
@@ -129,7 +134,7 @@
 			</div>
 		</div>
 		<!-- col-right -->
-		<div class="col-right scroll-pane">
+		<div class="col-right">
 			<!-- topic -->
 			<div class="topic">
 				<!-- counts -->
@@ -152,11 +157,11 @@
 						<div class="bet__inf">Макс. выигрыш </div>
 					</div>
 					<div class="bet__row">
-						<div class="bet__calculator">
-							<button class="bet__minus" type="button"></button>
-							<div class="bet__price">$ 40</div>
-							<button class="bet__plus" type="button"></button>
-							<div class="max-win">$ 74</div>
+						<div class="bet__calculator js-calculator">
+							<button class="bet__minus js-minus" type="button"></button>
+							<div class="bet__price">$ <input type="text" value="40" readonly></div>
+							<button class="bet__plus js-plus" type="button"></button>
+							<div class="max-win">$ <span class="js-amount">74</span></div>
 						</div>
 					</div>
 					<div class="bet__row">
