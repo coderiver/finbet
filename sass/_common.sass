@@ -397,7 +397,19 @@ body
 		color: white
 		font-size: 13px
 		font-weight: 500
-
+	&.commodities_alt 
+		text-align: left
+		padding-left: 15px 
+		padding-bottom: 15px 
+		+clr
+		.commodities__textual
+			float: right
+			padding-right: 7px 
+			text-align: right
+			width: 100px 
+			line-height: 1.4 
+		.commodities__buttons
+			float: left
 // topic
 .topic
 	padding: 15px 14px 0
@@ -485,7 +497,33 @@ body
 		line-height: 55px
 		background-color: #ffd236
 		+background-image(linear-gradient(to left, rgba(0, 0, 0, 0.12) 0%, rgba(255, 255, 255, 0.12) 100%))
-
+	&.bet_wide
+		margin-bottom: 6px 
+		.bet__price
+			width: 112px 
+			text-align: center
+			input
+				width: 100%
+				text-align: center
+				+box 
+		.bet__plus
+			border-right: 1px solid #fff
+.max
+	margin-bottom: 13px 
+	.max__amount
+		float: left
+		width: 112px 
+		height: 36px 
+		font-size: 22px 
+		text-align: center
+		line-height: 36px
+		+gh(#FEE057,#FDC13A) 
+		margin-right: 9px 
+		color: #000 
+	.max__text
+		font-size: 13px 
+		color: #FEE23C
+		line-height: 1.4 
 // duration
 .duration
 	margin-top: 4px
