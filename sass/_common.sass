@@ -84,7 +84,19 @@ body
 .ico
 	display: inline-block
 	&.ico_flag-ru
-		+s(flag-ru)
+		+s(flag-ru) 
+	&.ico_flag-de
+		+s(flag-de)
+	&.ico_flag-tu
+		+s(flag-tu)
+	&.ico_flag-en
+		+s(flag-en)
+	&.ico_flag-ne
+		+s(flag-ne)
+	&.ico_flag-fr
+		+s(flag-fr)
+	&.ico_flag-es
+		+s(flag-es)
 	&.ico_operator
 		+s(operator)
 	&.ico_arrtop
@@ -171,8 +183,9 @@ body
 // language
 .language
 	position: relative
-	width: 125px
-	text-align: center
+	width: 125px - 25px
+	padding-left: 25px 
+	text-align: left
 	cursor: pointer
 	background: #f2f2f2
 	.language__text
@@ -183,11 +196,29 @@ body
 		display: inline-block
 		vertical-align: middle
 		line-height: 1
-	.language__arr
+	.language__arr 
 		margin-right: 7px
 		+s(arr-bot)
 	.ico
 		margin-left: 6px
+	.language__drop
+		position: absolute
+		top: 50px
+		left: 0
+		right: 0
+		background: #E0E0E0    
+		padding-bottom: 10px 
+		display: none
+	.language__item
+		padding-left: 25px 
+		line-height: 40px 
+		.language__text
+			line-height: 40px 
+	&.is-active
+		background: #E0E0E0
+		.language__drop
+			display: block
+		 
 
 // logo
 .logo
