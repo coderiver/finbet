@@ -1100,6 +1100,30 @@ body
 	padding: 0.85vw 0.85vw 0.85vw 0
 	vertical-align: bottom
 	background: #000
+	+box
+	.calculator
+		margin: 0
+		padding: 0
+	&.is-number
+		top: 50px
+		margin-left: 2px
+		padding: 9px
+		.keyb__butt
+			margin-left: 4%
+			width: 30.5%
+			min-height: 100%
+			height: 63px
+			line-height: 63px
+			font-size: 22px
+			-webkit-font-smoothing: antialiased
+			&:first-child
+				margin-left: 0 !important
+		.keyb__row
+			margin-top: 4%
+			&:last-child
+				.keyb__butt
+					&:last-child
+						width: 65%
 	.keyb__row
 		margin-top: 0.85vw
 		font-size: 0
