@@ -78,11 +78,12 @@
 		<div class="col-left">
 			<!-- nav -->
 			<nav class="nav">
-				<li class="nav__item">
+				<li class="nav__item is-active">
 					<a href="#">Indices</a>
 					<div class="nav__list">
 						<div><a href="#" class="link link_oil"><span>oil</span></a></div>
 						<div><a href="#" class="link link_gold"><span>gold</span></a></div>
+						<div><a href="#" class="link link_silver"><span>silver</span></a></div>
 						<!-- commodities -->
 						<div class="commodities">
 							<div class="commodities__buttons">
@@ -93,12 +94,28 @@
 						</div>
 					</div>
 				</li>
-				<li class="nav__item">
+				<li class="nav__item is-active">
 					<a href="#">Stocks</a>
 					<div class="nav__list">
 						<div><a href="#" class="link link_gazprom"><span>gazprom</span></a></div>
 						<div><a href="#" class="link link_apple"><span>apple</span></a></div>
 						<div><a href="#" class="link link_google"><span>google</span></a></div>
+						<div><a href="#" class="link link_facebook"><span>Facebook</span></a></div>
+						<!-- commodities -->
+						<div class="commodities">
+							<div class="commodities__buttons">
+								<button class="commodities__plus" type="button"></button>
+								<button class="commodities__minus" type="button"></button>
+							</div>
+							<div class="commodities__text">Commodities</div>
+						</div>
+					</div>
+				</li>
+				<li class="nav__item is-active">
+					<a href="#">index</a>
+					<div class="nav__list">
+						<div><a href="#" class="link link_dax30"><span>dax30</span></a></div>
+						<div><a href="#" class="link link_ftse100"><span>ftse100</span></a></div>
 						<!-- commodities -->
 						<div class="commodities">
 							<div class="commodities__buttons">
@@ -143,10 +160,15 @@
 				<div class="pointer" style="top:70px">2.63<span class="pointer__red">44674</span></div>
 				<div class="pointer" style="top:110px">4.83<span class="pointer__red">44674</span></div>
 				<div class="pointer is-active" style="top:150px">6.13<span class="pointer__red">55674</span></div>
+				<!-- scrollbar -->
+				<div class="scrollbar">
+					<div class="scrollbar__track" style="width: 219px; margin-left: 150px"></div>
+				</div>
 			</div>
 			<!-- controls -->
 			<button class="zoom-plus" type="button"></button>
 			<button class="zoom-minus" type="button"></button>
+			<button class="btn-full" type="button"></button>
 			<button class="graph__info" type="button"></button>
 			<!-- behavior -->
 			<div class="behavior">
@@ -242,6 +264,7 @@
 				</div>
 				<!-- option -->
 				<a href="#" class="option is-selected js-option" data-seconds="15" data-munute="0">
+					<div class="mark js-mark"></div>
 					<div class="timer timer_yellow">
 						<div class="timer__ico">
 							<input class="dial js-dial is-yellow" type="text" data-thickness="100">
@@ -266,7 +289,8 @@
 					<div class="option__win">€ 40</div>
 				</a>
 				<!-- option -->
-				<div class="option js-option" data-seconds="25" data-munute="2">
+				<div class="option js-option" data-seconds="0" data-munute="1">
+					<div class="mark js-mark"></div>
 					<div class="timer timer_yellow">
 						<div class="timer__ico">
 							<input class="dial js-dial is-yellow" type="text" data-thickness="100">
@@ -291,7 +315,8 @@
 					<div class="option__win">€ 40</div>
 				</div>
 				<!-- option -->
-				<div class="option js-option" data-seconds="25" data-munute="2">
+				<div class="option js-option" data-seconds="40" data-munute="2">
+					<div class="mark js-mark"></div>
 					<div class="timer">
 						<div class="timer__ico">
 							<input class="dial js-dial" type="text" data-thickness="100">
@@ -316,7 +341,8 @@
 					<div class="option__win">€ 40</div>
 				</div>
 				<!-- option -->
-				<div class="option js-option" data-seconds="25" data-munute="2">
+				<div class="option js-option" data-seconds="50" data-munute="1">
+					<div class="mark js-mark"></div>
 					<div class="timer">
 						<div class="timer__ico">
 							<input class="dial js-dial" type="text" data-thickness="100">
@@ -341,7 +367,8 @@
 					<div class="option__win">€ 40</div>
 				</div>
 				<!-- option -->
-				<div class="option js-option" data-seconds="25" data-munute="2">
+				<div class="option js-option" data-seconds="25" data-munute="1">
+					<div class="mark js-mark"></div>
 					<div class="timer">
 						<div class="timer__ico">
 							<input class="dial js-dial" type="text" data-thickness="100">
@@ -367,6 +394,7 @@
 				</div>
 				<!-- option -->
 				<div class="option js-option" data-seconds="5" data-munute="0">
+					<div class="mark js-mark"></div>
 					<div class="timer">
 						<div class="timer__ico">
 							<input class="dial js-dial" type="text" data-thickness="100">

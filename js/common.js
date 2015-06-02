@@ -14,6 +14,7 @@ head.ready(function() {
 			timeMS = (60000*dataMin)+timeSek,
 			optionDial = thisOption.find('.js-dial'),
 			optionTime = thisOption.find('.js-time'),
+			optionMark = thisOption.find('.js-mark'),
 			timeId = optionTime.attr('id');
 		// dial
 		if (optionDial.hasClass('is-yellow')) {
@@ -59,6 +60,9 @@ head.ready(function() {
 			},
 			animation: false
 		});
+		optionMark.animate({
+			height: "0%"
+		}, timeMS );
 	});
 
 	// choose
